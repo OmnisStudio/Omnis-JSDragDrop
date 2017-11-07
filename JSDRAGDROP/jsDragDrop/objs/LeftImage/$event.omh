@@ -1,0 +1,14 @@
+On evDrop
+	If pDragType=kDragData
+		If pDragField='RightImage'
+			Calculate iRightImage as iLeftImage
+			
+			;  pDragValue is base64, convert to binary for consistancy
+			Calculate lBase64 as mid(pDragValue,pos(',',pDragValue)+1)
+			Calculate iLeftImage as binfrombase64(lBase64)
+		End If
+	Else
+		Calculate lLine as 1     ;; pDragValue can contain many lines use first file only for this example
+		Calculate iLeftImageIdent as pDragValue.[lLine].4
+		Do $cinst.$clientcommand('readfile',row(iLeftImageIdent,'iReadFileBin',kTrue))
+	End If

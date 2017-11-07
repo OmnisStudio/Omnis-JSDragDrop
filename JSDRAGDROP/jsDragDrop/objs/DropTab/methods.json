@@ -1,0 +1,58 @@
+[
+	{
+		"name": "$event",
+		"ident": 0,
+		"order": 1,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$candrop",
+		"ident": 1,
+		"order": 2,
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pDragType",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pDragValue",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pDragField",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pDropId",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 0,
+				"param": 4
+			}
+		],
+		"lvardefs": [
+
+		]
+	}
+]

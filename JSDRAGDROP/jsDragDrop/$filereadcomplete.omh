@@ -1,0 +1,5 @@
+If pIdent=iLeftImageIdent
+	Calculate iLeftImage as iReadFileBin
+Else If pIdent=iRightImageIdent
+	Calculate iRightImage as iReadFileBin
+End If

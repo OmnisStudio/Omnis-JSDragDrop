@@ -1,0 +1,3 @@
+If pDragField=$cobj.$name     ;; do allow image to be dropped on itself
+	Quit method kFalse
+End If

@@ -1,0 +1,33 @@
+;  Enter your initialization code here
+
+;  read initial image
+If $cwind().$name<>$cclass().$name     ;; form is in a subwindow
+	Do $cwind.$getConstructRow Returns pRow
+End If
+
+If pos('devicePixelRatio:2',pRow.jsDeviceInfo)     ;; use larger icon for hi res devices
+	Calculate lImagePath as con(sys(115),'html',sys(9),'icons',sys(9),'appbuilder',sys(9),'omnisstudio_12352_300x100.png')
+Else
+	Calculate lImagePath as con(sys(115),'html',sys(9),'icons',sys(9),'appbuilder',sys(9),'omnisstudio_12353_150x50.png')
+End If
+
+ReadBinFile (lImagePath,iLeftImage)
+
+Do iDragList.$define(iDragListCol)
+For lCount from 1 to 5 step 1
+	Do iDragList.$add(con('New Item ',lCount))
+End For
+
+Do iDropList.$define(iDropListCol)
+For lCount from 1 to 5 step 1
+	Do iDropList.$add(con('Line ',lCount))
+End For
+
+;  initialize tree list
+Do iNodeIcons.$define(iIconUrl)
+Do iNodeIcons.$add(iconurl(1633))
+Do iNodeIcons.$add(iconurl(1710))
+Do iNodeIcons.$add(iconurl(1622))
+
+Do iTreeList.$define(iText,iIcon,iIdent,iTag,iToolTip,iTextColor,iFlags,iChildren)
+Do iTreeList.$add('Car Parts',1,1000,'','Car parts for all makes',rgb(255,0,0),kJSTreeFlagHasChildren)
